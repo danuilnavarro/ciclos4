@@ -1,0 +1,15 @@
+#login-column{
+    background-color: #E7E9EB;
+    border-radius: 10px;
+}
+#top{
+    background-color: #282A35;
+    border-radius: 15px;
+}
+body{
+    font: 17px "Source Sans Pro", sans-serif;
+}
+#boton{
+    background-color: #04AA6D;
+    border-radius: 10px;
+}

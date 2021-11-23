@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="Index_uno.css">
+    <title>Saylor Moon-Iniciar Sesion</title>
+</head>
+
+<body>
+<section class="container">
+    <header>
+        <h1 id="top" class="text-center text-white pt-4">Saylor Moon</h1>
+        <h4 id="signin" class="text-center text-black pt-5">Iniciar Sesion</h4>
+        <nav>
+            <a class="row justify-content-center align-items-center" href="Index_dos.html" target="_blank">¿No tienes una cuenta? Registrarse</a>
+        </nav>
+    </header>
+
+    <div id="login-row" class="row justify-content-center align-items-center">
+        <div id="login-column" class="col-md-6">
+            <form id="frm" class="was-validated">
+                <div class="mb-3 mt-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required />
+                    <div class="valid-feedback">Campos completados</div>
+                    <div id="bad-email" class="invalid-feedback d-none">Por favor, llene el campo con un email valido.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="pwd" class="form-label">Contraseña:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required />
+                    <div class="valid-feedback">Campos completados</div>
+                    <div id="bad-password" class="invalid-feedback d-none">Por favor, llene el campo con una contraseña valida</div>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required />
+                    <label class="form-check-label" for="myCheck">Estoy de acuerdo y no soy un robot.</label>
+                    <div class="valid-feedback">Valido, presione Iniciar</div>
+                    <div class="invalid-feedback">
+                        Por favor, marque la casilla para continuar
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                <button id="boton" type="submit" class="btn btn-primary">Iniciar</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+    <footer>
+        <p id="final" class="text-center text-black pt-5">@ todos los derechos reservados 2021</p>
+    </footer>
+</section>
+<script src="Script_uno.js"></script>
+</body>
+</html>
