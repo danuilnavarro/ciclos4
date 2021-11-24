@@ -55,7 +55,7 @@ async function onSubmit($event) {
 async function sendDataToBackend(email, password, name) {
     try {
         //debugger
-        const url = "http://localhost:8083/api/user/new";
+        const url = "http://129.159.49.212:8083/api/user/new";
         const fetchOptions = {
             method: "POST",
             body: JSON.stringify({
