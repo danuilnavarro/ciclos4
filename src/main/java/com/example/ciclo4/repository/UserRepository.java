@@ -1,7 +1,7 @@
 package com.example.ciclo4.repository;
 
+import com.example.ciclo4.interfaces.UserInterface;
 import com.example.ciclo4.model.User;
-import com.example.ciclo4.repository.crud.UserCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -12,27 +12,34 @@ import java.util.Optional;
 public class UserRepository {
 
     @Autowired
-    private UserCrudRepository userCrudRepository;
+    private UserInterface userInterfaceRepository;
 
-    public List<User> getAll() {
-        return (List<User>) userCrudRepository.findAll();
+    public List<User> getAll() { return (List<User>) userInterfaceRepository.findAll();
     }
 
     public Optional<User> getUser(int id) {
-        return userCrudRepository.findById(id);
+        return userInterfaceRepository.findById(id);
     }
 
-    public User save(User user) {
-        return userCrudRepository.save(user);
+    public User create(User user) {
+        return userInterfaceRepository.save(user);
     }
 
-    public boolean existeEmail(String email) {
-        Optional<User> usuario = userCrudRepository.findByEmail(email);
+    public void update(User user) {
+        userInterfaceRepository.save(user);
+    }
+
+    public void delete(User user) {
+        userInterfaceRepository.delete(user);
+    }
+
+    public boolean emailExists(String email) {
+        Optional<User> usuario = userInterfaceRepository.findByEmail(email);
 
         return !usuario.isEmpty();
     }
 
-    public Optional<User> autenticarUsuario(String email, String password) {
-        return userCrudRepository.findByEmailAndPassword(email, password);
+    public Optional<User> authenticateUser(String email, String password) {
+        return userInterfaceRepository.findByEmailAndPassword(email, password);
     }
 }
