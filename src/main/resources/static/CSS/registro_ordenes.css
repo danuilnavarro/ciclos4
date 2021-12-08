@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #E7E9EB;
+    height: 100vh;
+    font: 17px "Source Sans Pro", sans-serif
+}
+
+img {
+    border-radius: 6px;
+}
+
+button {
+    background-color: #04AA6D;
+    border-radius: 10px;
+}
+
+h1{
+    background-color: #282A35;
+    border-radius: 15px;
+}
