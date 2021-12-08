@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="UTF-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet"/>
-    <link href="CSS/index.css" rel="stylesheet">
-    <title>Saylor Moon-Iniciar Sesion</title>
+    <link href="CSS/registro.css" rel="stylesheet">
+    <title>Saylor Moon-Registrar Usuario</title>
 </head>
 
 <body>
@@ -17,30 +17,45 @@
 <section class="container">
     <header>
         <h1 class="text-center text-white pt-4" id="top">Saylor Moon</h1>
-        <h4 class="text-center text-black pt-5" id="signin">Iniciar Sesion</h4>
+        <h4 class="text-center text-black pt-5" id="singup">Registrarse</h4>
         <nav>
-            <a class="row justify-content-center align-items-center" href="registro.html" target="_blank">¿No tienes una
-                cuenta? Registrarse</a>
+            <a class="row justify-content-center align-items-center" href="index.html" target="_blank">¿Ya tienes una
+                cuenta? Iniciar Sesion</a>
         </nav>
     </header>
 
     <div class="row justify-content-center align-items-center" id="login-row">
         <div class="col-md-6" id="login-column">
             <form class="was-validated" id="frm">
+                <div class="mb-3">
+                    <label class="form-label" for="username">Nombre completo:</label><br/>
+                    <input class="form-control" id="username" name="username" required type="username"/>
+                    <div class="valid-feedback">Campos completados</div>
+                    <div class="invalid-feedback" id="bad-username">Por favor, llene el campo con un nombre valido.
+                    </div>
+                </div>
                 <div class="mb-3 mt-3">
                     <label class="form-label" for="email">Email:</label>
                     <input class="form-control" id="email" name="email" placeholder="Enter email" required
                            type="email"/>
                     <div class="valid-feedback">Campos completados</div>
-                    <div class="invalid-feedback d-none" id="bad-email">Por favor, llene el campo con un email valido.
-                    </div>
+                    <div class="invalid-feedback" id="bad-email">Por favor, llene el campo con un email valido.</div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="pwd">Contraseña:</label>
                     <input class="form-control" id="pwd" name="pswd" placeholder="Enter password" required
                            type="password"/>
                     <div class="valid-feedback">Campos completados</div>
-                    <div class="invalid-feedback d-none" id="bad-password">Por favor, llene el campo con una contraseña
+                    <div class="invalid-feedback" id="bad-password">Por favor, llene el campo con una contraseña
+                        valida
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="pwd">Confirmar contraseña:</label>
+                    <input class="form-control" id="pwd-dos" name="pswd" placeholder="Enter password" required
+                           type="password"/>
+                    <div class="valid-feedback">Campos completados</div>
+                    <div class="invalid-feedback" id="bad-password-dos">Por favor, llene el campo con una confirmacion
                         valida
                     </div>
                 </div>
@@ -53,21 +68,23 @@
                     </div>
                 </div>
                 <div class="form-group text-center">
-                    <button class="btn btn-primary" id="boton" type="submit">Iniciar</button>
+                    <button class="btn btn-primary" id="boton" type="submit">Registrarse</button>
                 </div>
+
             </form>
 
         </div>
 
     </div>
     <footer>
-        <p class="text-center text-black pt-5" id="final">@ todos los derechos reservados 2021</p>
+        <p class="final" id="final">@ todos los derechos reservados 2021</p>
     </footer>
 </section>
-<script src="JS/script_index.js"></script>
+<script src="JS/script_registro.js"></script>
 <script crossorigin="anonymous"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+
 </html>

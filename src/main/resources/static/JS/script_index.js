@@ -36,7 +36,7 @@ async function onSubmit($event) {
 
 async function getDataAsync() {
     try {
-        const url = "http://129.159.49.212:8083/api/user/all";
+        const url = "http://localhost:8083/api/user/all";
         //console.log(`cargando`);
         const response = await fetch(url);
         const converted = await response.json();
