@@ -7,6 +7,13 @@ async function onSubmit($event) {
 
     console.log(`$event.target`, $event.target);
     const $username = document.querySelector("#username");
+    const $identification = document.querySelector("#identification");
+    const $birthday = document.querySelector("#birthday");
+    const $monthbirthday = document.querySelector("#monthbirthday");
+    const $address = document.querySelector("#address");
+    const $cellphone = document.querySelector("#cellphone");
+    const $zone = document.querySelector("#zone");
+    const $type = document.querySelector("#type");
     const $email = document.querySelector("#email");
     const $password = document.querySelector("#pwd");
     const $passwordDos = document.querySelector("#pwd-dos");
@@ -22,6 +29,14 @@ async function onSubmit($event) {
     const passwordValue = $password.value.trim();
     const passwordDosValue = $passwordDos.value.trim();
     const nameValue = $username.value;
+    const identificationValue = $identification.value;
+    const birthdayValue = $birthday.value;
+    const monthbirthdayValue = $monthbirthday.value;
+    const addressValue = $address.value;
+    const cellphoneValue = $cellphone.value;
+    const zoneValue = $zone.value;
+    const typeValue = $type.value;
+
     if (emailValue !== "") {
         console.log(`el email es valido`);
         if (passwordValue !== "") {
@@ -35,7 +50,7 @@ async function onSubmit($event) {
         }
         if (passwordDosValue == passwordValue){
             console.log(`confirmacion valida`);
-            await sendDataToBackend(emailValue, passwordValue, nameValue);
+            await sendDataToBackend(emailValue, passwordValue, nameValue, identificationValue, birthdayValue, monthbirthdayValue, addressValue, cellphoneValue, zoneValue,  typeValue );
 
             }
 
@@ -52,7 +67,7 @@ async function onSubmit($event) {
     }
 }
 
-async function sendDataToBackend(email, password, name) {
+async function sendDataToBackend(email, password, name, identification, birthday, monthbirthday, address, cellphone, zone, type) {
     try {
         //debugger
         const url = "http://localhost:8083/api/user/new";
@@ -62,6 +77,13 @@ async function sendDataToBackend(email, password, name) {
                 email: email,
                 password: password,
                 name: name,
+                identification: identification,
+                birthtDay: birthday,
+                monthBirthtDay: monthbirthday,
+                address: address,
+                cellphone: cellphone,
+                zone: zone,
+                type: type,
 
             }),
             headers: {

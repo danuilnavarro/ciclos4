@@ -7,9 +7,7 @@ function agregarOrden() {
         id:$("#id").val(),
         registerDay:$("#registerDay").val(),
         status:$("#status").val(),
-        salesMan:$("#formSalesMan").val(),
-        products:$("#products").val(),
-        quantities:$("#quantities").val(),
+
     }
 
 
@@ -41,9 +39,7 @@ function editarOrden() {
         id:$("#id").val(),
         registerDay:$("#registerDay").val(),
         status:$("#status").val(),
-        salesMan:$("#formSalesMan").val(),
-        products:$("#products").val(),
-        quantities:$("#quantities").val(),
+
     }
 
 
