@@ -2,7 +2,6 @@ package com.example.ciclo4.service;
 
 
 import com.example.ciclo4.model.Order;
-
 import com.example.ciclo4.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,7 +48,7 @@ public class OrderService {
         Optional<Order> e = orderRepository.getOrder(order.getId());
         if (e.isEmpty()) {
             return orderRepository.create(order);
-        }else{
+        } else {
             return order;
         }
 
@@ -61,7 +60,7 @@ public class OrderService {
             Optional<Order> orderDb = orderRepository.getOrder(order.getId());
             if (!orderDb.isEmpty()) {
 
-                if (order.getStatus()!= null) {
+                if (order.getStatus() != null) {
                     orderDb.get().setStatus(order.getStatus());
                 }
 
@@ -87,16 +86,29 @@ public class OrderService {
     /*
     Ordenes asociadas a los asesores de zona
      */
-    public List<Order> findByZone(String zone){
+    public List<Order> findByZone(String zone) {
         return orderRepository.findByZone(zone);
     }
 
-    public List<Order> ordersSalesManByDate(String dateStr, int id){
+    /*Reto4 desde aca
+      Ordenes de pedido de un asesor por id
+       */
+    public List<Order> ordersSalesManById(Integer id) {
+        return orderRepository.ordersSalesManById(id);
+    }
+
+    /*
+    Ordenes de pedido de un asesor por fecha
+    */
+    public List<Order> ordersSalesManByDate(String dateStr, Integer id) {
         return orderRepository.ordersSalesManByDate(dateStr, id);
     }
 
-    public List<Order> ordersSalesManByState(String state, int id){
-        return orderRepository.ordersSalesManBySate(state, id);
+    /*
+    Ordenes de pedido de un asesor por estado
+    */
+    public List<Order> ordersSalesManByState(String state, Integer id) {
+        return orderRepository.ordersSalesManByState(state, id);
     }
 
 }

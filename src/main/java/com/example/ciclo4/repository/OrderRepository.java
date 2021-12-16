@@ -4,8 +4,6 @@ package com.example.ciclo4.repository;
 import com.example.ciclo4.interfaces.OrderInterface;
 
 import com.example.ciclo4.model.Order;
-
-import com.example.ciclo4.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
@@ -23,6 +21,10 @@ public class OrderRepository {
     @Autowired
     private OrderInterface orderInterfaceRepository;
 
+    /*
+    Template es alternativa a sentenciar en la interface
+    JDBC Template para sabes SQL
+     */
     @Autowired
     private MongoTemplate mongoTemplate;
 
@@ -52,6 +54,23 @@ public class OrderRepository {
         return orderInterfaceRepository.findByZone(zone);
     }
 
+    /*Reto4 desde aca
+    Ordenes de pedido de un asesor por id
+     */
+    public List<Order> ordersSalesManById(Integer id) {
+        Query query = new Query();
+        Criteria dateCriteria = Criteria.where("salesMan.id").is(id);
+
+        query.addCriteria(dateCriteria);
+        List<Order> orders = mongoTemplate.find(query, Order.class);
+
+        return orders;
+
+    }
+
+    /*
+    Ordenes de pedido de un asesor por fecha
+    */
     public List<Order> ordersSalesManByDate(String dateStr, Integer id) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
@@ -64,7 +83,10 @@ public class OrderRepository {
         return orders;
     }
 
-    public List<Order> ordersSalesManBySate(String state, Integer id) {
+    /*
+    Ordenes de pedido de un asesor por estado
+    */
+    public List<Order> ordersSalesManByState(String state, Integer id) {
 
         Query query = new Query();
         Criteria dateCriteria = Criteria.where("salesMan.id").is(id).and("status").is(state);
