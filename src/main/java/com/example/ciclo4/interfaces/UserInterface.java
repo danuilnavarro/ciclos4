@@ -16,4 +16,8 @@ public interface UserInterface extends MongoRepository<User, Integer> {
     /* Para seleccionar el usuario con el id maximo o ultimo id
      */
     Optional<User> findTopByOrderByIdDesc();
+
+
+    List<User> findByMonthBirthtDay(String monthBirthtDay);
+
 }

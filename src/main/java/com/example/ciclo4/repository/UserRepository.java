@@ -14,7 +14,8 @@ public class UserRepository {
     @Autowired
     private UserInterface userInterfaceRepository;
 
-    public List<User> getAll() { return (List<User>) userInterfaceRepository.findAll();
+    public List<User> getAll() {
+        return (List<User>) userInterfaceRepository.findAll();
     }
 
     public Optional<User> getUser(int id) {
@@ -43,7 +44,11 @@ public class UserRepository {
         return userInterfaceRepository.findByEmailAndPassword(email, password);
     }
 
-    public Optional<User> lastUserId(){
+    public Optional<User> lastUserId() {
         return userInterfaceRepository.findTopByOrderByIdDesc();
+    }
+
+    public List<User> getByMonthBirthtDay(String monthBirthtDay) {
+        return userInterfaceRepository.findByMonthBirthtDay(monthBirthtDay);
     }
 }

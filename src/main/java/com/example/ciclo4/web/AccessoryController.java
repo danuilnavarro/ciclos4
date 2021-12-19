@@ -46,4 +46,9 @@ public class AccessoryController {
         return accessoryService.delete(reference);
     }
 
+    @GetMapping("/price/{price}")
+    public List<Accessory> getByPriceLessThanEqual(@PathVariable("price") double price) { return accessoryService.getByPriceLessThanEqual(price); }
+
+    @GetMapping("/description/{description}")
+    public List<Accessory> getByDescriptionContains(@PathVariable("description") String description) { return accessoryService.getByDescriptionContains(description); }
 }

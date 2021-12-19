@@ -4,6 +4,7 @@ import com.example.ciclo4.model.User;
 import com.example.ciclo4.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -45,12 +46,12 @@ public class UserService {
         }
         Optional<User> e = userRepository.getUser(user.getId());
         if (e.isEmpty()) {
-            if (emailExists(user.getEmail())==false){
+            if (emailExists(user.getEmail()) == false) {
                 return userRepository.create(user);
-            }else{
+            } else {
                 return user;
-                }
-        }else{
+            }
+        } else {
             return user;
         }
     }
@@ -113,5 +114,9 @@ public class UserService {
         } else {
             return usuario.get();
         }
+    }
+
+    public List<User> getByMonthBirthtDay(String monthBirthtDay) {
+        return userRepository.getByMonthBirthtDay(monthBirthtDay);
     }
 }

@@ -86,4 +86,12 @@ public class AccessoryService {
         }).orElse(false);
         return aBoolean;
     }
+
+    public List<Accessory> getByPriceLessThanEqual(double price){
+        return accessoryRepository.getByPriceLessThanEqual(price);
+    }
+
+    public List<Accessory> getByDescriptionContains(String description){
+        return accessoryRepository.getByDescriptionContains(description);
+    }
 }
